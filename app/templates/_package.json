@@ -1,0 +1,28 @@
+{
+    "main": "app/index.html",
+    "name": "<%= _.slugify(projectName) %>",
+    "description": "<%= projectDescription %>",
+    "version": "0.0.1",
+    "keywords": [
+        "node-webkit"
+    ],
+    "window": {
+        "title": "<%= projectName %>",
+        "icon": "app/imgs/window_icon.png", // TODO: Implement since different OSs deal with this differently
+        "toolbar": true,
+        "frame": true,
+        "width": <%= windowWidth %>,
+        "height": <%= windowHeight %>,
+        "position": "mouse",
+        "min_width": 100,
+        "min_height": 100,
+        "max_width": 1080,
+        "max_height": 1920
+    },
+    "webkit": {
+        "plugin": true
+    },
+    "dependencies": {
+        
+    }
+}
