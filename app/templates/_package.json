@@ -3,6 +3,10 @@
     "name": "<%= _.slugify(projectName) %>",
     "description": "<%= projectDescription %>",
     "version": "0.0.1",
+    "repository" : { 
+        "type" : "git",
+        "url" : "http://github.com/<%= gitUser %>/<%= _.slugify(projectName) %>.git"
+    },
     "keywords": [
         "node-webkit"
     ],

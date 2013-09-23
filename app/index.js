@@ -37,6 +37,12 @@ NodewebkitGenerator.prototype.askFor = function askFor() {
       message: 'Enter project description:',
       default: 'Starting template for Node-Webkit'
     },
+    {
+      type: 'input',
+      name: 'gitUser',
+      message: 'Your github username(for .git url):',
+      default: 'Not Set'
+    },
 
     // NODE-WEBKIT OPTIONS
     {
@@ -90,6 +96,8 @@ NodewebkitGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
     this.projectDescription = props.projectDescription;
+    this.gitUser = props.gitUser;
+
     this.windowWidth = props.windowWidth;
     this.windowHeight = props.windowHeight;
     
@@ -130,6 +138,7 @@ NodewebkitGenerator.prototype.app = function app() {
 
   this.template('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
+  this.copy('_README.md', 'README.md');
   this.copy('gitignore', '.gitignore');
 };
 
