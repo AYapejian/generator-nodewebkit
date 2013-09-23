@@ -1,3 +1,11 @@
-window.onload = function() {
-  document.getElementById('page-container').innerHTML = "I was added onload()";
+'use strict';
+
+var fs = require('fs');
+
+window.onload = function () {
+  fs.readFile('package.json', 'utf8', function (error, data) {
+    var output = error ? error : data;
+
+    document.getElementById('content-container').innerHTML = output;
+  });
 };

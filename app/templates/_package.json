@@ -8,7 +8,7 @@
     ],
     "window": {
         "title": "<%= projectName %>",
-        "icon": "app/imgs/window_icon.png", // TODO: Implement since different OSs deal with this differently
+        "icon": "app/imgs/window_icon.png****NOT_IMPLEMENTED*****",
         "toolbar": true,
         "frame": true,
         "width": <%= windowWidth %>,
