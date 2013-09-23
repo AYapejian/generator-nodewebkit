@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 
 
-var NodewebkitGenerator = module.exports = function NodewebkitGenerator(args, options, config) {
+var NodewebkitGenerator = module.exports = function NodewebkitGenerator (args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
@@ -50,10 +50,10 @@ NodewebkitGenerator.prototype.askFor = function askFor() {
       name: 'windowWidth',
       message: 'Window width on launch:',
       default: '800',
-      validate: function( value ) {
+      validate: function (value) {
         return value.match(/^\d+$/) ? true : 'Please enter a valid number';
       },
-      filter: function(value){
+      filter: function (value) {
         return isNaN(value) ? parseInt(value, 10) : value;
       }
     },
@@ -62,10 +62,10 @@ NodewebkitGenerator.prototype.askFor = function askFor() {
       name: 'windowHeight',
       message: 'Window height at launch:',
       default: '600',
-      validate: function(value) {
+      validate: function (value) {
         return value.match(/^\d+$/) ? true : 'Please enter a valid number';
       },
-      filter: function(value){
+      filter: function (value){
         return isNaN(value) ? parseInt(value, 10) : value;
       } // TODO: Add other node-webkit options for the package.json window definition
     },
@@ -80,13 +80,13 @@ NodewebkitGenerator.prototype.askFor = function askFor() {
         { name: 'AngularJS', value: 'angularjs', checked: true },
         { name: 'Bootstrap', value: 'bootstrap', checked: true }
       ],
-      validate: function(answers){
+      validate: function (answers) {
         var jquery = answers.indexOf('jquery') > -1 ? true : false;
         var bootstrap = answers.indexOf('bootstrap') > -1 ? true : false;
 
-        if(bootstrap && !jquery){ 
-          return "Bootstrap requires jQuery"; 
-        }else{
+        if (bootstrap && !jquery) { 
+          return "Bootstrap requires jQuery";
+        } else {
           return true;
         }
       }
@@ -138,6 +138,7 @@ NodewebkitGenerator.prototype.app = function app() {
 
   this.template('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
+  this.copy('Gruntfile.js', 'Gruntfile.js');
   this.copy('_README.md', 'README.md');
   this.copy('gitignore', '.gitignore');
 };

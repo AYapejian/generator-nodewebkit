@@ -27,6 +27,6 @@
         "plugin": true
     },
     "dependencies": {
-        
+        "grunt": "~0.4.1"
     }
 }
